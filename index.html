@@ -5,11 +5,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>航班任务电子显示</title>
 </head>
 
 <body>
-    Hello World
+    <div id="StateBar">
+        <span id="State-Date"></span>
+        <span><a target="_blank" href="./edit.html">编辑航班任务</a></span>
+    </div>
+    <div id="FlightList">
+        <table>
+            <tr id="">
+                <td><label class="sup">进港</label><label>TV9814</label></td>
+                <td><label class="sup">预达</label><label>00:20</label></td>
+                <td><label class="sup">A330</label><label>B-8420</label></td>
+                <td><label class="sup">机位</label>315R</td>
+                <td><label class="sup">出港</label>TV9908</td>
+                <td><label class="sup">预飞</label>06:30</td>
+                <td><label class="sup">机务</label>吴永浩-廖鸿博</td>
+                <td><label class="sup">任务</label>asdaddsd-啊苏打撒旦撒-撒旦撒旦-啊打三大岁-阿斯大苏打撒旦撒旦-啊大苏打三大的--阿斯大苏打</td>
+            </tr>
+            <tr>
+                <td><label class="sup">进港</label>TV9814</td>
+                <td><label class="sup">预达</label>00:20</td>
+                <td><label class="sup">飞机</label>B-8420</td>
+                <td><label class="sup">机位</label>315R</td>
+                <td><label class="sup">出港</label>TV9908</td>
+                <td><label class="sup">预飞</label>06:30</td>
+                <td><label class="sup">机务</label>吴永浩-廖鸿博</td>
+                <td><label class="sup">任务</label>asdaddsd-啊苏打撒旦撒-撒旦撒旦-啊打三大岁-阿斯大苏打撒旦撒旦-啊大苏打三大的--阿斯大苏打</td>
+            </tr>
+            <tr>
+                <td><label class="sup">进港</label>TV9814</td>
+                <td><label class="sup">预达</label>00:20</td>
+                <td><label class="sup">飞机</label>B-8420</td>
+                <td><label class="sup">机位</label>315R</td>
+                <td><label class="sup">出港</label>TV9908</td>
+                <td><label class="sup">预飞</label>06:30</td>
+                <td><label class="sup">机务</label>吴永浩-廖鸿博</td>
+                <td><label class="sup">任务</label>asdaddsd-啊苏打撒旦撒-撒旦撒旦-啊打三大岁-阿斯大苏打撒旦撒旦-啊大苏打三大的--阿斯大苏打</td>
+            </tr>
+            <tr>
+                <td><label class="sup">进港</label>TV9814</td>
+                <td><label class="sup">预达</label>00:20</td>
+                <td><label class="sup">飞机</label>B-8420</td>
+                <td><label class="sup">机位</label>315R</td>
+                <td><label class="sup">出港</label>TV9908</td>
+                <td><label class="sup">预飞</label>06:30</td>
+                <td><label class="sup">机务</label>吴永浩-廖鸿博</td>
+                <td><label class="sup">任务</label>asdaddsd-啊苏打撒旦撒-撒旦撒旦-啊打三大岁-阿斯大苏打撒旦撒旦-啊大苏打三大的--阿斯大苏打</td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        td {
+            font-size: 1.05rem;
+            background-color: rgb(129, 206, 94);
+        }
+        
+        label.sup {
+            vertical-align: super;
+            font-size: 0.75rem;
+            background-color: cyan;
+        }
+    </style>
+    <script>
+        setInterval(() => {
+            let date = new Date();
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            let ss = date.getSeconds();
+            let YY = date.getFullYear();
+            let MM = date.getMonth();
+            let DD = date.getDate();
+            // JS神奇的字符串和数字操作
+            MM = MM > 9 ? MM : '0' + MM;
+            DD = DD > 9 ? DD : '0' + DD;
+            hh = hh > 9 ? hh : '0' + hh;
+            mm = mm > 9 ? mm : '0' + mm;
+            ss = ss > 9 ? ss : '0' + ss;
+            let time = `${YY}-${MM}-${DD} ${hh}:${mm}:${ss}`;
+            document.getElementById('State-Date').innerText = time;
+        }, 1000);
+    </script>
 </body>
 
 </html>
