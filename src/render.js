@@ -19,7 +19,7 @@ function newChart(container, data){
     let decendLabel = ['1','2'];
     let decendData = [50,25];
     let option = {
-        title: {text: `${airplane} Malfunction Statics end at ${deadline}`},
+        title: {text: `${airplane} Malfunction Statics as of ${deadline}`},
         legend: {data: ['Count of Malfunction']},
         series: [{
             type: 'bar',
