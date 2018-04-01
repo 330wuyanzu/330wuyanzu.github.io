@@ -7,7 +7,7 @@ function newContainer(id){
     return div;
 }
 
-function newTotalChart(container, data){
+function newTotalChart(container, data, type){
     let total = data.Total;
     let atas = data.ATA;
     let deadline = data.Deadline;
@@ -18,7 +18,7 @@ function newTotalChart(container, data){
         decendData.push(ata[1]);
     }
     let option = {
-        title: {text: `A320FM Malfunction Statics as of ${deadline} <total: ${total}>`},
+        title: {text: `${type} Malfunction Statics as of ${deadline} <total: ${total}>`},
         legend: {},
         series: [{
             type: 'bar',
@@ -42,8 +42,8 @@ function newTotalChart(container, data){
 
 let a320 = document.getElementById('total320');
 let a330 = document.getElementById('total330');
-newTotalChart(a320, A320);
-newTotalChart(a330, A330);
+newTotalChart(a320, A320, 'A320FM');
+newTotalChart(a330, A330, 'A330');
 
 
 function newChart(container, data){
