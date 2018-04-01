@@ -21,7 +21,7 @@ function newTotalChart(container, data, type){
         decendPercent.push(tmp);
     }
     let option = {
-        title: {text: `${type} Malfunction Statics as of ${deadline} <total: ${total}>`,
+        title: {text: `${type} Malfunction Statistics as of ${deadline} <total: ${total}>`,
                 x:'center'
         },
         legend: {show: false},
@@ -78,7 +78,7 @@ function newTotalChartPer(container, data, type){
         legends.push(ata[0]);
     }
     let option = {
-        title: {text: `${type} Malfunction Statics as of ${deadline} <total: ${total}>`,
+        title: {text: `${type} Malfunction Statistics as of ${deadline} <total: ${total}>`,
                 x: 'center'
         },
         legend: {
@@ -125,7 +125,7 @@ function newChart(container, data){
         decendData.push(ata[1]);
     }
     let option = {
-        title: {text: `${airplane} Malfunction Statics as of ${deadline} <total: ${data.Total}>`,
+        title: {text: `${airplane} Malfunction Statistics as of ${deadline} <total: ${data.Total}>`,
         x: 'center'
         },
         series: [{
