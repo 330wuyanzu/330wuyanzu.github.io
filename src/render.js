@@ -13,9 +13,9 @@ function newChart(container, data){
     let atas = data.ATA;
     let decendLabel = [];
     let decendData = [];
-    for(ata in atas){
-        decendLabel.push(ata);
-        decendData.push(atas[ata].count);
+    for(ata of atas){
+        decendLabel.push(ata[0]);
+        decendData.push(ata[1]);
     }
     let option = {
         title: {text: `${airplane} Malfunction Statics as of ${deadline}`},
