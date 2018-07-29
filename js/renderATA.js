@@ -68,7 +68,7 @@ function FamilyBar(container, fleet, data, theme){
     let graphic = [{
         type: 'text',
         z: 100,
-        right: '40%',
+        left: 'center',
         top: '10%',
         style: {
             fill: '#fff',
