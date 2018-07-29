@@ -30,7 +30,9 @@ function FamilyBar(container, fleet, data, theme){
     let toolbox = {
         show: true,
         feature: {saveAsImage: {title: '保存为图片'}},
-        right: 70
+        left: 'center',
+        top: 25,
+        iconStyle:{color: '#64BD3D', borderColor:'#64BD3D'}
     };
     let  yAxis = [{
         type: 'category',
