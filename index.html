@@ -11,21 +11,28 @@
 </head>
 
 <body id="main">
-    <div id="total320" class="container"></div>
-    <div id="total330" class="container"></div>
+    <div id="bg">
+        <video autoplay loop="loop" poster='./css/bg2.jpg' muted>
+            <source src="./css/bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div id="content">
+        <a href="./total.html" class="btn btn-outline-success">A320FM机队</a>
+        <a href="./total.html" class="btn btn-outline-primary">A330机队</a>
+    </div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="./js/echarts.min.js"></script>
 </body>
 <script>
-    function loadJS(path){
-        let script = document.createElement('script');
-        script.setAttribute('src', path);
-        document.getElementsByTagName('html')[0].appendChild(script);
-    }
-    loadJS('./data/A320FM.js');
-    loadJS('./data/A330FM.js');
-    loadJS('./js/renderATA.js');
-</script>
+        function loadJS(path){
+            let script = document.createElement('script');
+            script.setAttribute('src', path);
+            document.getElementsByTagName('html')[0].appendChild(script);
+        }
+        loadJS('./data/A320FM.js');
+        loadJS('./data/A330FM.js');
+        loadJS('./js/renderATA.js');
+    </script>
 </html>
