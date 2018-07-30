@@ -1,11 +1,5 @@
 /* jshint esversion:6 */
-function newContainer(id){
-    let div = document.createElement('div');
-    div.setAttribute("id", id);
-    div.setAttribute("class", "container");
-    document.getElementById('main').appendChild(div);
-    return div;
-}
+
 /* 渲染机队总体故障统计条形图 */
 function FamilyBar(container, fleet, data, theme){
     Update = data.update;
@@ -95,5 +89,20 @@ function FamilyBar(container, fleet, data, theme){
     chart.setOption(option);
 }
 
-FamilyBar(document.getElementById('total320'), 'A320FM', A320FM, 'dark');
-FamilyBar(document.getElementById('total330'), 'A330', A330FM, 'dark');
+const A320FM = {
+    "update":"2018-07-28",
+    "total":2979,
+    "by_ata":[
+        ["ATA-21",399],["ATA-34",320],["ATA-27",280],["ATA-36",235],["ATA-32",225],["ATA-23",166],["ATA-22",163],["ATA-49",137],["ATA-30",136],["ATA-28",133],["ATA-24",77],["ATA-31",76],["ATA-79",74],["ATA-26",66],["ATA-52",61],["ATA-77",52],["ATA-29",46],["ATA-74",45],["ATA-75",41],["ATA-38",38],["ATA-35",28],["ATA-73",28],["ATA-33",22],["ATA-47",21],["ATA-25",16],["ATA-80",14],["ATA-71",14],["ATA-72",14],["ATA-46",11],["ATA-70",9],["ATA-78",9],["ATA-76",7],["ATA-57",6],["ATA-56",3],["ATA-05",2],["ATA-12",2],["ATA-55",2],["ATA-53",1]
+    ]
+};
+
+const A330FM = {"update":"2018-07-28","total":354,"by_ata":[["ATA-21",56],["ATA-34",30],["ATA-73",30],["ATA-36",30],["ATA-23",24],["ATA-24",20],["ATA-27",20],["ATA-32",20],["ATA-28",19],["ATA-52",18],["ATA-49",17],["ATA-38",8],["ATA-47",7],["ATA-29",7],["ATA-25",6],["ATA-22",6],["ATA-74",6],["ATA-30",5],["ATA-31",5],["ATA-26",3],["ATA-33",3],["ATA-79",3],["ATA-78",3],["ATA-46",2],["ATA-71",2],["ATA-35",2],["ATA-77",1],["ATA-45",1]]};
+
+let x = document.getElementById('total320');
+if(x){
+FamilyBar(x, 'A320FM', A320FM, 'dark');}
+x = document.getElementById('total330');
+if(x){
+FamilyBar(x, 'A330', A330FM, 'dark');
+}
