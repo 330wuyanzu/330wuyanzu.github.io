@@ -106,6 +106,9 @@ x = document.getElementById('total330');
 if(x){
 FamilyBar(x, 'A330', A330FM, 'dark');
 }
-setTimeout(function(){
-    document.getElementById('loader').remove();
-},5000);
+video = document.getElementById('bgv');
+video.oncanplay = function(){
+    setTimeout(function(){
+        document.getElementById('loader').remove();
+    },5000);
+};
