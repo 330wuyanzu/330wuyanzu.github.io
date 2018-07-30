@@ -107,7 +107,7 @@ if(x){
 FamilyBar(x, 'A330', A330FM, 'dark');
 }
 video = document.getElementById('bgv');
-video.oncanplay = function(){
+video.oncanplaythrough = function(){
     setTimeout(function(){
         document.getElementById('loader').remove();
     },5000);
