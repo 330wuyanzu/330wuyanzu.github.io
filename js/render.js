@@ -1,6 +1,7 @@
 /* jshint esversion:6 */
 
 /* 渲染机队总体故障统计条形图 */
+
 function FamilyBar(container, fleet, data, theme){
     Update = data.update;
     Total = data.total;
@@ -115,6 +116,8 @@ document.getElementById('btn-320').onclick = function(){
     a320.style.display = null;
     a330.style.visibility = 'hidden';
     a330.style.display = 'none';
+    document.getElementById('btn-320').className = 'btn btn-success';
+    document.getElementById('btn-330').className = 'btn btn-outline-primary';
 }
 document.getElementById('btn-330').onclick = function(){
     a320=document.getElementById('total320');
@@ -123,10 +126,6 @@ document.getElementById('btn-330').onclick = function(){
     a320.style.visibility = 'hidden';
     a330.style.display = null;
     a320.style.display = 'none';
+    document.getElementById('btn-320').className = 'btn btn-outline-success';
+    document.getElementById('btn-330').className = 'btn btn-primary';
 }
-
-
-video = document.getElementById('bgv');
-video.oncanplay = function(){
-        document.getElementById('loader').remove();
-};

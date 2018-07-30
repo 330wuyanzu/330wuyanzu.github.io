@@ -32,8 +32,8 @@
         </div>
     </div>
     <div id="content">
-        <button id="btn-320" type="button" class="btn btn-success">A320FM机队</button>
-        <button id="btn-330" type="button" class="btn btn-primary">A330机队</button>
+        <button id="btn-320" type="button" class="btn btn-outline-success">A320FM机队</button>
+        <button id="btn-330" type="button" class="btn btn-outline-primary">A330机队</button>
     </div>
     <div id="total320" class="container"></div>
     <div id="total330" class="container"></div>
@@ -41,11 +41,17 @@
     <script defer="defer" src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script defer="defer" src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script defer="defer" src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
-    <script  async="async" src="./js/render.js"></script>
+    <script defer="defer" src="./js/render.js"></script>
     <div id="bg">
         <video id="bgv" autoplay loop="loop" muted>
             <source src="./css/bg.mp4" type="video/mp4">
         </video>
     </div>
+    <script>
+    video = document.getElementById('bgv');
+    video.oncanplay = function(){
+        document.getElementById('loader').remove();
+    };
+    </script>
 </body>
 </html>
