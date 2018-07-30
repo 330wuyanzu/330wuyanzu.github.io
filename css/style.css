@@ -127,22 +127,29 @@
     height: auto;  
     width: auto;  
 }
-div.container{
-    width: 100%;
-    height: 900px;
-    margin-bottom: 10px;
-}
 
 #content{
-    padding-top: 20%;
+    margin-top: 10px;
+    left: 50%;
     display: block;
     text-align: center;
 }
 #content a.btn{
-    margin: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 body{
     background-image: url('./bg.jpg');
     background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+div.container{
+    width: 100%;
+    height: 900px;
+    margin-bottom: 10px;
+    visibility: hidden;
 }

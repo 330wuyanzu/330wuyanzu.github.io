@@ -83,7 +83,8 @@ function FamilyBar(container, fleet, data, theme){
         yAxis: yAxis,
         series: series,
         legend: {show: false},
-        graphic: graphic
+        graphic: graphic,
+        backgroundColor:'rgba(0, 0, 0,0.5)'
     };
     let chart = echarts.init(container, theme);
     chart.setOption(option);
@@ -106,9 +107,26 @@ x = document.getElementById('total330');
 if(x){
 FamilyBar(x, 'A330', A330FM, 'dark');
 }
+
+document.getElementById('btn-320').onclick = function(){
+    a320=document.getElementById('total320');
+    a330=document.getElementById('total330');
+    a320.style.visibility = 'visible';
+    a320.style.display = null;
+    a330.style.visibility = 'hidden';
+    a330.style.display = 'none';
+}
+document.getElementById('btn-330').onclick = function(){
+    a320=document.getElementById('total320');
+    a330=document.getElementById('total330');
+    a330.style.visibility = 'visible';
+    a320.style.visibility = 'hidden';
+    a330.style.display = null;
+    a320.style.display = 'none';
+}
+
+
 video = document.getElementById('bgv');
 video.oncanplay = function(){
-    setTimeout(function(){
         document.getElementById('loader').remove();
-    },5000);
 };
