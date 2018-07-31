@@ -156,7 +156,7 @@
 
     <style>
         body {
-            background-image: url('./bg.jpg');
+            background-image: url('./css/bg.jpg');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -220,14 +220,17 @@
     <script defer="defer" async="true" src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
     <script src="./js/render.js"></script>
+    <script src="/data/320.js"></script>
+    <script src="/data/330.js"></script>
 
     <div id="bg">
         <video id="bgv" autoplay loop="loop" poster="./css/bg.jpg" muted>
                     <source src="./css/bg.mp4" type="video/mp4">
-            </video>
+        </video>
     </div>
 
 </body>
+
 <script>
     video = document.getElementById('bgv');
     video.oncanplay = function() {
@@ -235,6 +238,14 @@
             document.getElementById('loader').remove();
         }, 5000);
     };
+    let x = document.getElementById('total320');
+    if (x) {
+        FamilyBar(x, 'A320FM', A320FM, 'dark');
+    }
+    x = document.getElementById('total330');
+    if (x) {
+        FamilyBar(x, 'A330', A330FM, 'dark');
+    }
 </script>
 
 </html>
