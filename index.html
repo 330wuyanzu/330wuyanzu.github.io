@@ -129,32 +129,7 @@
                 transform: rotate(360deg);
             }
         }
-    </style>
-</head>
-
-<body id="main">
-    <div id="loader">
-        <h2 class="loader-text">兄弟，网速有点儿慢哦</h2>
-        <div class="loader-inner">
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-        </div>
-    </div>
-
-    <style>
+        
         body {
             background-image: url('./css/bg.jpg');
             background-position: center;
@@ -205,7 +180,37 @@
             visibility: hidden;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer="defer" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script defer="defer" src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+    <script defer="defer" src="/data/320.js"></script>
+    <script defer="defer" src="/data/330.js"></script>
+    <script defer="defer" src="./js/render.js"></script>
+</head>
 
+<body id="main">
+    <div id="loader">
+        <h2 class="loader-text">兄弟，网速有点儿慢哦</h2>
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
     <div id="content">
         <button id="btn-320" type="button" class="btn btn-outline-success">A320FM机队</button>
         <button id="btn-330" type="button" class="btn btn-outline-primary">A330机队</button>
@@ -213,39 +218,43 @@
 
     <div id="total320" class="container"></div>
     <div id="total330" class="container"></div>
-
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script defer="defer" async="true" src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script defer="defer" async="true" src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
-    <script src="./js/render.js"></script>
-    <script src="/data/320.js"></script>
-    <script src="/data/330.js"></script>
-
     <div id="bg">
         <video id="bgv" autoplay loop="loop" poster="./css/bg.jpg" muted>
-                    <source src="./css/bg.mp4" type="video/mp4">
+            <source src="./css/bg.mp4" type="video/mp4">
         </video>
     </div>
-
 </body>
-
 <script>
+    document.getElementById('btn-320').onclick = function() {
+        document.getElementsByTagName('body')[0].style.overflow = 'auto';
+        a320 = document.getElementById('total320');
+        a330 = document.getElementById('total330');
+        a320.style.visibility = 'visible';
+        a320.style.display = null;
+        a330.style.visibility = 'hidden';
+        a330.style.display = 'none';
+        document.getElementById('btn-320').className = 'btn btn-success';
+        document.getElementById('btn-330').className = 'btn btn-outline-primary';
+    }
+
+    document.getElementById('btn-330').onclick = function() {
+        document.getElementsByTagName('body')[0].style.overflow = 'auto';
+        a320 = document.getElementById('total320');
+        a330 = document.getElementById('total330');
+        a330.style.visibility = 'visible';
+        a320.style.visibility = 'hidden';
+        a330.style.display = null;
+        a320.style.display = 'none';
+        document.getElementById('btn-320').className = 'btn btn-outline-success';
+        document.getElementById('btn-330').className = 'btn btn-primary';
+    }
+
     video = document.getElementById('bgv');
     video.oncanplay = function() {
         setTimeout(function() {
             document.getElementById('loader').remove();
         }, 5000);
     };
-    let x = document.getElementById('total320');
-    if (x) {
-        FamilyBar(x, 'A320FM', A320FM, 'dark');
-    }
-    x = document.getElementById('total330');
-    if (x) {
-        FamilyBar(x, 'A330', A330FM, 'dark');
-    }
 </script>
 
 </html>

@@ -2,7 +2,7 @@
 
 /* 渲染机队总体故障统计条形图 */
 
-function FamilyBar(container, fleet, data, theme) {
+function renderFamily(container, fleet, data, theme) {
     Update = data.update;
     Total = data.total;
     tuple_list = data.by_ata;
@@ -90,25 +90,12 @@ function FamilyBar(container, fleet, data, theme) {
     let chart = echarts.init(container, theme);
     chart.setOption(option);
 }
-document.getElementById('btn-320').onclick = function() {
-    document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    a320 = document.getElementById('total320');
-    a330 = document.getElementById('total330');
-    a320.style.visibility = 'visible';
-    a320.style.display = null;
-    a330.style.visibility = 'hidden';
-    a330.style.display = 'none';
-    document.getElementById('btn-320').className = 'btn btn-success';
-    document.getElementById('btn-330').className = 'btn btn-outline-primary';
+
+let x = document.getElementById('total320');
+if (x) {
+    renderFamily(x, 'A320FM', A320FM, 'dark');
 }
-document.getElementById('btn-330').onclick = function() {
-    document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    a320 = document.getElementById('total320');
-    a330 = document.getElementById('total330');
-    a330.style.visibility = 'visible';
-    a320.style.visibility = 'hidden';
-    a330.style.display = null;
-    a320.style.display = 'none';
-    document.getElementById('btn-320').className = 'btn btn-outline-success';
-    document.getElementById('btn-330').className = 'btn btn-primary';
+x = document.getElementById('total330');
+if (x) {
+    renderFamily(x, 'A330', A330FM, 'dark');
 }
