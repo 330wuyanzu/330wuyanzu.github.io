@@ -1,0 +1,24 @@
+#background {
+    position: fixed;
+    z-index: -100;
+    width: auto;
+    height: auto;
+}
+
+#background video {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+    z-index: -100;
+}
+
+#background source {
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
+}
